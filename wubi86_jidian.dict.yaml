@@ -2,7 +2,7 @@
 ---
 name: wubi86_jidian
 version: "4.3"
-sort: orininal #by_weight/权重 original/原始
+sort: original #by_weight/权重 original/原始
 import_tables: #此处是添加用户自定义词库的地方
   - wubi86_jidian_user                # 个人私有词库
   - wubi86_jidian_extra_english       # 英文常用词
@@ -17,21 +17,21 @@ import_tables: #此处是添加用户自定义词库的地方
 
 
 
-columns: #码表格式
-  - text #文字
-  - code #输入码
-  - weight #权重
+columns:    # 码表格式
+  - text    # 文字
+  - code    # 输入码
+  - weight  # 权重
   - stem
 encoder:
   exclude_patterns:
     - '^z.*$'
-  rules:
-    - length_equal: 2
-      formula: "AaAbBaBb"
-    - length_equal: 3
-      formula: "AaBaCaCb"
-    - length_in_range: [4, 10]
-      formula: "AaBaCaZa"
+  rules:                        # 大写字母表示字序，小写字母表示其所跟随的大写字母所以表的字中的编码序
+    - length_equal: 2           # 对于二字词
+      formula: "AaAbBaBb"       # 取第一字首二码、第二字首二码
+    - length_equal: 3           # 对于三字词
+      formula: "AaBaCaCb"       # 取第一字首码、第二字首码、第三字首码、第三字二笔码
+    - length_in_range: [4, 10]  # 对于四至十字词
+      formula: "AaBaCaZa"       # 取第一字首码，第二字尾码、第三字首码、最后一字尾码
 ...
 
 工	a
@@ -3691,6 +3691,7 @@ encoder:
 切诊	avyw
 共	aw
 花	aw
+Apple Watch	aw
 花式	awaa
 花茎	awac
 花期	awad
@@ -8028,6 +8029,7 @@ encoder:
 骇客	cypt
 通讯社	cypy
 骇然	cyqd
+双肩包	cyqn
 骗钱	cyqg
 驻外	cyqh
 驻留	cyqy
@@ -11803,6 +11805,7 @@ encoder:
 春游	dwiy
 春	dwj
 春晓	dwja
+春晚	dwjq
 奉贤	dwjc
 奏明	dwje
 春	dwjf
@@ -12386,6 +12389,7 @@ encoder:
 须	ed
 腌	ed
 腌菜	edae
+爱奇艺	edan
 爱克斯光	edai
 膸	edap
 肱	edc
@@ -19586,6 +19590,7 @@ encoder:
 表格	gest
 青松	gesw
 表述	gesy
+表盘	gete
 青筋	gete
 静待	getf
 表征	getg
@@ -21323,6 +21328,7 @@ encoder:
 画出	glbm
 画院	glbp
 画面	gldm
+画布	gldm
 画成	gldn
 一国三公	gldw
 珚	gldy
@@ -35843,6 +35849,7 @@ encoder:
 呼	ktu
 嗅闻	ktub
 吃着	ktud
+川普	ktuo
 呼	ktuh
 唯物辩证法	ktui
 响音	ktuj
@@ -43438,6 +43445,7 @@ encoder:
 性腺	nter
 必胜	ntet
 改用	ntet
+发胶	nteu
 发胖	nteu
 飞毛腿	ntev
 尾	ntf
@@ -43501,6 +43509,7 @@ encoder:
 飞利浦	ntig
 发水	ntii
 发油	ntim
+发泥	ntin
 发烫	ntin
 恬淡	ntio
 发觉	ntip
@@ -44326,6 +44335,7 @@ encoder:
 心悸	nynt
 慷慨	nynv
 恼恨	nynv
+迟迟	nyny
 尽心	nyny
 惊心	nyny
 咫尺	nyny
@@ -44685,6 +44695,7 @@ encoder:
 烟灰缸	odrm
 类推	odrw
 烦乱	odtd
+烂大街	odtf
 爏	odth
 类乎	odtu
 类	odu
@@ -54136,7 +54147,7 @@ encoder:
 搭车	ralg
 披荆斩棘	ralg
 找回	ralk
-搭边	ralp
+描边	ralp
 描图	ralt
 拱圈	ralu
 搭界	ralw
@@ -56229,6 +56240,7 @@ encoder:
 拐角	rkqe
 捉鱼	rkqg
 鬼哭狼嚎	rkqk
+捉急	rkqv
 拀	rkqn
 扣杀	rkqs
 扣留	rkqy
@@ -58042,6 +58054,7 @@ encoder:
 插	rtf
 拖地	rtfb
 郫	rtfb
+拖动	fctr
 手动	rtfc
 搬运	rtfc
 托运	rtfc
@@ -58763,6 +58776,7 @@ encoder:
 招手	rvrt
 热播	rvrt
 抛掷	rvru
+热搜	rvrv
 殷殷	rvrv
 执拗	rvrx
 拔刀相助	rvse
@@ -61916,6 +61930,7 @@ encoder:
 晳	srjf
 蜤	srju
 株距	srkh
+模拟器	srkk
 歌舞团	srlf
 板车	srlg
 棉田	srll
@@ -63767,6 +63782,7 @@ encoder:
 科威特	tdtr
 得而复失	tdtr
 各有千秋	tdtt
+知乎	tdtu
 短简	tdtu
 矮	tdtv
 敌	tdty
@@ -67063,6 +67079,7 @@ encoder:
 笟	trcy
 犄	trd
 牜	trd
+特氟龙	trdx
 笑掉大牙	trda
 特大	trdd
 生搬硬套	trdd
@@ -68516,6 +68533,7 @@ encoder:
 入关	tyud
 往前	tyue
 篇章	tyuj
+特朗普	tyuo
 簾	tyuo
 篇首	tyut
 入道	tyut
@@ -68884,6 +68902,7 @@ encoder:
 凑巧	udag
 送葬	udag
 着落	udai
+关东	udai
 头功	udal
 减薪	udau
 关切	udav
@@ -69485,6 +69504,7 @@ encoder:
 亲朋好友	uevd
 凈	uevh
 剪刀	uevn
+剃须刀	uevn
 前嫌	uevu
 前代	uewa
 前段	uewd
@@ -72834,6 +72854,7 @@ encoder:
 门锁	uyqi
 六旬	uyqj
 闹钟	uyqk
+单肩包	uyqn
 门馆	uyqn
 门钉	uyqs
 门儿	uyqt
@@ -79192,7 +79213,7 @@ encoder:
 人样	wwsu
 代代相传	wwsw
 凭什么	wwtc
-令人生厌	wwtd
+众筹	wwtd
 人选	wwtf
 人造	wwtf
 坐等	wwtf
@@ -84326,6 +84347,7 @@ encoder:
 齐心	yjny
 课业	yjog
 齌	yjou
+充电宝	yjpg
 课室	yjpg
 刘禅	yjpy
 谒	yjq
@@ -88153,3 +88175,5 @@ u	copu
 ㄤ	cooy
 ㄥ	cooy
 ㄦ	cooy
+⌘	cocm
+	coap

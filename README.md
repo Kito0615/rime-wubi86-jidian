@@ -38,25 +38,20 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 
 
 **关于【简入繁出】支持**
-
 <img src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/rime-tradition-output.gif" width=500 title="简入繁出">
-
 是以切换输入方案的形式实现的，之前用菜单实现有个弊端：在切换应用后繁体输出的设置并没有保留，也就是说不是全局的，以输入方案的形式就可以实现全局繁体输入。
 <kbd>control</kbd> + <kbd>0</kbd> 呼出菜单，选择`极点五笔繁体`，目前在 `Mac` 上测试正常，不知道 `Windows` 上如何，如果不能实现简入繁出的效果，可能需要安装 `OpenCC`[[链接地址](https://github.com/BYVoid/OpenCC)] 库支持，具体不知道怎么操作，因为我配好 `schema` 后就可以用了，没有安装 `OpenCC`
 
 
 ## 安装 鼠须管(macOS)
-
 去 [官网下载](https://rime.im/download/)
 下载后按照步骤安装即可
 
 
 ## 下载 五笔配置文件
-
 也就是当前库，直接下载即可 [https://github.com/KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian)
 
 其中的文件列表有：
-
 ```bash
 .
 ├── README.md                               # 当前说明文档
@@ -81,13 +76,10 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 
 
 ## 设置五笔输入法 macOS 鼠须管
-
 1. macOS 上的 鼠须管 配置文件存放目录是 `~/Library/Rime` 
 2. 把上面下载的文件移到该目录中，点击 <kbd>部署</kbd> 即可。
 
-
 放的时候目录结构是这样的：
-
 ```bash
 ~/Library/
 └── Rime
@@ -109,27 +101,20 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
     ├── wubi86_jidian_pinyin.schema.yaml
     └── wubi86_jidian_trad.schema.yaml  
 ```
-
 > 注意：对于不熟悉命令行操作的朋友， `~` 代表的是当前用户的主目录，比如我的用户名是 `kyle`, `~` 就代表 `/Users/kyle/` 这个绝对路径。
 > 需要将你下载的文件放入 `/Users/你用户名/Library/Rime` 这个目录下，了然否？
 
-<!-- 
-### Windows 小狼毫
 
-<img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/rime_setup_windows_start.png" width=300>
+### Windows 小狼毫
+<img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/windows_skin.png" width=300>
 
 1. 点击【开始】
 2. 打开刚刚安装的小狼毫输入法程序目录，打开【用户文件夹】
 3. 把该项目中的文件复制到里面
 4. 点击开始菜单中的【部署】即可
 
- -->
-
-
 ## 皮肤
-
 <img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/skin.png" width=500>
-
 
 ## 相关链接
 
@@ -207,5 +192,5 @@ translator:
 
 自 `v0.13` 之后可自定义输出系统变量，如日期等
 
-文件 `rime.lua` 盛放的是调用的方法，你需要在相应的 `XXXX.schema.yaml` 文件的 `engine`/`translators` 字段添加一些东西，可以参阅本库的 [`wubi86_jidian.schema.yaml`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/wubi86_jidian.schema.yaml) 文件。
+文件 [`rime.lua`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/rime.lua) 盛放的是调用的方法，你需要在相应的 `XXXX.schema.yaml` 文件的 `engine`/`translators` 字段添加一些东西，可以参阅本库的 [`wubi86_jidian.schema.yaml`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/wubi86_jidian.schema.yaml) 文件。
 具体 `rime.lua` 文件说明参阅这里： [https://github.com/hchunhui/librime-lua/blob/master/sample/lua/date.lua](https://github.com/hchunhui/librime-lua/blob/master/sample/lua/date.lua)
