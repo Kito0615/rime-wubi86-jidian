@@ -76,9 +76,7 @@ translator:
   db_class: tabledb                     # 用户词典类型 userdb - 二进制 / tabledb - 人类语言
   disable_user_dict_for_patterns:       # 不需要录入用户词典的编码
     - "^z.*$"
-abc_segmentor:
-  extra_tags:
-    - reverse_lookup
+
 
 reverse_lookup:
   dictionary: pinyin_simp

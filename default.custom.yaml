@@ -9,6 +9,7 @@
 patch:
   schema_list:
     - schema: wubi86_jidian
+    - schema: numbers
     - schema: wubi86_jidian_pinyin
     - schema: wubi86_jidian_trad
     - schema: pinyin_simp
@@ -19,6 +20,7 @@ patch:
   switcher:
     hotkeys:
       - "Control+0"
+      - "Shift+Control+0"
     abbreviate_options: true
     caption: "【 输入法设置 】"
     option_list_separator: "｜"
@@ -44,10 +46,10 @@ patch:
 
   key_binder:
     bindings:
-      #     - {accept: comma, send: 2, when: has_menu} #候选2 用逗号选择 （修改的时候不要多加或少加空格，跟前面的对齐就好了）
-      #     - {accept: period, send: 3, when: has_menu} #候选3 用句号选择
-      - {accept: semicolon, send: 2, when: has_menu} #候选2 用分号
-      - {accept: apostrophe, send: 3, when: has_menu} #候选3 用单引号
+      #     - {accept: comma, send: 2, when: has_menu}  # 候选2 用逗号选择 （修改的时候不要多加或少加空格，跟前面的对齐就好了）
+      #     - {accept: period, send: 3, when: has_menu} # 候选3 用句号选择
+      - {accept: semicolon, send: 2, when: has_menu}  # 候选2 用分号
+      - {accept: apostrophe, send: 3, when: has_menu} # 候选3 用单引号
       - {accept: bracketleft, send: Page_Up, when: paging}
       - {accept: bracketright, send: Page_Down, when: has_menu}
       # emacs key bindings, copy from https://github.com/rime/rime-prelude/blob/master/key_bindings.yaml

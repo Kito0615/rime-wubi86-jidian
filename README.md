@@ -29,16 +29,20 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 <img src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/Rime%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95.gif" width=600 title="Rime五笔输入法输入样子">
 
 
-## 使用前的一些用户习惯说明
+### 使用前的一些用户习惯说明
 
-**<kbd>control</kbd> + <kbd>0</kbd> 弹出菜单**
+**<kbd>control</kbd> + <kbd>0</kbd> 或者 <kbd>shift</kbd> + <kbd>control</kbd> + <kbd>0</kbd> 弹出菜单**
 
-> 如果不弹出，应该是目前的软件环境屏蔽了这个组合键（如：MWeb），换个软件再按就可以了
+> 如果第一个组合键不弹出菜单，就用第二个组合键，如果还不弹出就换个软件，进入输入状态再试
+> 有时候是目前的软件环境屏蔽了这个组合键（如：MWeb 中 <kbd>control</kbd> + <kbd>0</kbd> 这个组合键就冲突），换个软件再按就可以了
+
 弹的菜单中第一位的名字就是当前使用的输入法方案，其后跟着的就是该方法中的输入法菜单，有【半角 - 全角】【简 - 繁】等功能菜单，再后面的就是其它可选的输入法方案，对应 `default.custom.yaml` 中 `schema_list` 字段内容
 
 
 **关于【简入繁出】支持**
+
 <img src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/rime-tradition-output.gif" width=500 title="简入繁出">
+
 是以切换输入方案的形式实现的，之前用菜单实现有个弊端：在切换应用后繁体输出的设置并没有保留，也就是说不是全局的，以输入方案的形式就可以实现全局繁体输入。
 <kbd>control</kbd> + <kbd>0</kbd> 呼出菜单，选择`极点五笔繁体`，目前在 `Mac` 上测试正常，不知道 `Windows` 上如何，如果不能实现简入繁出的效果，可能需要安装 `OpenCC`[[链接地址](https://github.com/BYVoid/OpenCC)] 库支持，具体不知道怎么操作，因为我配好 `schema` 后就可以用了，没有安装 `OpenCC`
 
@@ -48,13 +52,14 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 下载后按照步骤安装即可
 
 
-## 下载 五笔配置文件
+### 1. 下载 五笔配置文件
 也就是当前库，直接下载即可 [https://github.com/KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian)
 
 其中的文件列表有：
 ```bash
 .
 ├── README.md                               # 当前说明文档
+├── numbers.schema.yaml                     # 输入方案 - 大写数字
 ├── rime.lua                                # 可以输出系统变量的函数
 ├── default.custom.yaml                     # 自定义一些输入法的功能：标点，二三候选等
 ├── pinyin_simp.dict.yaml                   # 简体拼音码表 - 五笔中拼音输入需要的
@@ -75,7 +80,7 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 ```
 
 
-## 设置五笔输入法 macOS 鼠须管
+### 2. 设置五笔输入法 macOS 鼠须管
 1. macOS 上的 鼠须管 配置文件存放目录是 `~/Library/Rime` 
 2. 把上面下载的文件移到该目录中，点击 <kbd>部署</kbd> 即可。
 
@@ -85,6 +90,7 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 └── Rime
     ├── README.md
     ├── default.custom.yaml
+    ├── numbers.schema.yaml 
     ├── pinyin_simp.dict.yaml
     ├── pinyin_simp.schema.yaml
     ├── squirrel.custom.yaml
@@ -105,16 +111,20 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 > 需要将你下载的文件放入 `/Users/你用户名/Library/Rime` 这个目录下，了然否？
 
 
-### Windows 小狼毫
+
+
+### 3. 皮肤
+
+<img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/skin.png" width=500>
+
+## 配置 小狼毫（Windows）
+
 <img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/windows_skin.png" width=300>
 
 1. 点击【开始】
 2. 打开刚刚安装的小狼毫输入法程序目录，打开【用户文件夹】
 3. 把该项目中的文件复制到里面
 4. 点击开始菜单中的【部署】即可
-
-## 皮肤
-<img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/skin.png" width=500>
 
 ## 相关链接
 
@@ -132,11 +142,12 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 
 
 
-# 关于自定义一些功能
+## 关于自定义一些功能
 
-所有配置说明都在配置文件中说明了
+所有配置说明都在配置文件中说明了，如果有其它问题可以在 `issue` 中提出，或者在群里（QQ群：878750538）讨论，有需要就 `@青枫`
 
 ```bash
+├── numbers.schema.yaml                     # 输入方案 - 大写数字
 ├── squirrel.custom.yaml                    # 鼠须管（for macOS）输入法候选词界面
 ├── default.custom.yaml                     # 自定义一些输入法的功能：标点，二三候选等
 ├── wubi86_jidian.schema.yaml               # 输入方案 - 极点五笔
@@ -151,14 +162,14 @@ Rime 输入法的优势在于它高度的可自定义化，不单单可以定义
 ```
 
 
-## 输出系统 `时间` 和 `日期`
+### 1. 输出系统 `时间` 和 `日期`
 
 输入对应词，获取当前日期和时间
 - `date` 输出日期，格式 `2019年06月19日` `2019-06-19`
 - `time` 输出时间，格式 `10:00` `10:00:00`
 
 
-## 开启五笔模式下的自动造词功能
+### 2. 开启五笔模式下的自动造词功能
 
 默认是没有开启的，如果想开启需要手动编辑 `wubi86_jidian.schema.yaml` 文件，里面也有相关的说明
 
@@ -184,13 +195,46 @@ translator:
 效果如图：
 
 <img title="1" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/wubi-auto-1.png" width="500">
+
 <img title="2" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/wubi-auto-2.png" width="500">
+
 <img title="3" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/wubi-auto-3.png" width="500">
+
 <img title="4" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/wubi-auto-4.png" width="500">
 
-## 输出系统变量
+
+### 3. 快捷输入大写数字：壹贰叁肆伍陆
+
+本库中包含一个可以输入大写数字的方案，名叫 `大写数字`，呼出菜单选择该方案即可。
+在这个模式下：具体可以看源文件 [`numbers.schema.yaml`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/numbers.schema.yaml)
+
+
+| 键 | 对应值        |
+|-------------|------------|
+| 1234567890  | 壹贰叁肆伍陆柒捌玖零 |
+| wqbsjfd.     | 万仟佰拾角分第点    |
+| z           | 整之         |
+| y           | 元月亿        |
+
+| 键 (按住 shift)  | 对应值         |
+|------------|-------------|
+| 1234567890 | 一二三四五六七八九〇  |
+| wqbsjfd.    | 万千百十角分点     |
+| z          | 整之          |
+| y          | 元月亿         |
+
+
+
+输入案例：
+
+<img title="大写数字输入案例" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/input_number.gif" width="500">
+
+
+
+### 4. 输出系统变量
 
 自 `v0.13` 之后可自定义输出系统变量，如日期等
 
 文件 [`rime.lua`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/rime.lua) 盛放的是调用的方法，你需要在相应的 `XXXX.schema.yaml` 文件的 `engine`/`translators` 字段添加一些东西，可以参阅本库的 [`wubi86_jidian.schema.yaml`](https://github.com/KyleBing/rime-wubi86-jidian/blob/master/wubi86_jidian.schema.yaml) 文件。
 具体 `rime.lua` 文件说明参阅这里： [https://github.com/hchunhui/librime-lua/blob/master/sample/lua/date.lua](https://github.com/hchunhui/librime-lua/blob/master/sample/lua/date.lua)
+
